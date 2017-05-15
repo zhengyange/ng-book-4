@@ -1,0 +1,19 @@
+<div class="ui raised segment">
+	<h2 class="ui header">Demo Form: Sku with validations</h2>
+	<form [formGroup]="validForm"
+				(ngSubmit)="onSubmit(validForm.value)"
+				class="ui form">
+		<div class="field"
+				 [class.error]="!sku.valid && sku.touched">
+			<label for="skuInput">SKU</label>
+			<input type="text"
+						 id="skuInput"
+						 placeholder="SKU"
+						 [formControl]="validForm.controls['sku']">
+		</div>
+		<button type="submit" class="ui button">Submit</button>
+	</form>
+</div>
+<div *ngIf="!validForm.controls['sku'].valid" class="ui error message">SKU is invalid</div>
+<div *ngIf="validForm.controls['sku'].hasError('required')" class="ui error message">SKU is required</div>
+<div *ngIf="validForm.controls['sku'].hasError('invalidSku')" class="ui error message">SKU must begin with <span>123</span></div>

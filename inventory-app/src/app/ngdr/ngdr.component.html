@@ -1,0 +1,31 @@
+<div class="ui input">
+	<input type="text" name="color" value="{{color}}" #colorinput >
+</div>
+<div class="ui input">
+	<input type="text" name="fontSize" value="{{fontSize}}" #fontinput >
+</div>
+<button class="ui primary button" (click)="apply(colorinput.value, fontinput.value)">Apply setting</button>
+<div>
+	<span [ngStyle]="{color: 'red'}" [style.font-size.px]="fontSize"> red text</span>
+</div>
+<h4 class="ui horizontal divider header">
+		ngStyle with object property from variable
+</h4>
+<div>
+	<span [ngStyle]="{color: color}">
+		{{ color }} text
+	</span>
+</div>
+<h4 class="ui horizontal divider header">
+	style from vaiable
+</h4>
+<div [style.background-color]="color" style="color: white;">
+	{{ color }} background
+</div>
+
+<div class="ngNonBindableDemo">
+	<span class="bordered">{{ content }}</span>
+	<span class="pre" ngNonBindable>
+		&larr; This is what {{ content }} rendered
+	</span>
+</div>
