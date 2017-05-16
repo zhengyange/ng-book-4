@@ -1,0 +1,6 @@
+{
+  "/v1": {
+    "target": "https://api.spotify.com",
+    "secure": false
+  }
+}
