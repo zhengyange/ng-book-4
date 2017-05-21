@@ -1,0 +1,15 @@
+<div class="ui message" popup
+	#popup1="popup"
+	message="Clicked the message">
+	<div class="header">
+		Learning Directives
+	</div>
+	<p>This should use our Popup diretive</p>
+	<p popup
+		#popup2="popup"
+	 	message="clicked the p icon">another popup</p>
+</div>
+<div>
+	<button (click)="popup1.displayMessage()">Dispaly popup for messge elemet</button>
+	<button (click)="popup2.displayMessage()">Dispaly popup for messge p icon</button>
+</div>

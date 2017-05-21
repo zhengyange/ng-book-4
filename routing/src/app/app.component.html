@@ -5,10 +5,35 @@
 			<a href="" [routerLink]="['home']">Home</a>
 			<a href="" [routerLink]="['about']">About</a>
 			<a href="" [routerLink]="['contact']">Contact Us</a>
+			<a href="" [routerLink]="['protected']">Protected</a>
+			<a href="" [routerLink]="['products']">Products</a>
+			<a href="" [routerLink]="['styling']">Styling</a>
+			<a href="" [routerLink]="['popup']">Popup</a>
 	</div>
 </div>
 <div id="content">
   <div class="container">
+  	<app-login></app-login>
+  	<br />
     <router-outlet></router-outlet>
   </div>
+  <div>
+  		<div message header="My Message">
+  			This is the content of the message
+  		</div>
+  </div>
 </div>
+
+<app-tabs>
+  <app-tab title="First tab">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.  
+    Quibusdamm magni quia ut harum faciis, ullam deleniti porro
+    dignissimos quasi at molestiae sapiente natus, neque voluptautm
+    ad consequuntur cupiditate nemo sunt.
+  </app-tab>
+  <app-tab 
+    *ngFor="let tab of tabs" [title]="tab.title"
+  >
+    {{ tab.content }}
+  </app-tab>
+</app-tabs>
